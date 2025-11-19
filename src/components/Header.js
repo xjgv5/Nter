@@ -1,9 +1,21 @@
 import React from 'react';
 
-function Header() {
+function Header({ isMenuOpen, toggleMenu }) {
     return (
         <header className='header'>
-            <h1>Header</h1>
+            <div className="logo">
+                <h1>Nter</h1>
+            </div>
+
+            <div className="header-content">
+                <button
+                    className="menu-toggle-btn"
+                    onClick={toggleMenu}
+                >
+                    {isMenuOpen ? '✕' : '☰ '}
+                </button>
+            </div>
+
         </header>
     );
 }

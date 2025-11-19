@@ -1,15 +1,32 @@
+// App.js
 import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header';
-import Navegacion from './components/Navegacion';
 import Footer from './components/Footer';
+import MenuLateral from './components/MenuLateral';
+import Principal from './components/Principal';
+import { useState } from 'react';
 
 function App() {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    console.log("click en el boton");
+  };
+
   return (
-    <div className="Layout">
-      <Header />
-      <Navegacion />
-      <Footer />
-    </div>
+    <Router>
+      <div className="Layout">
+        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <div className="main-content">
+          <MenuLateral isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+          <Principal />
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

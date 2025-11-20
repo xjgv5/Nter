@@ -1,54 +1,61 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCashRegister } from '@fortawesome/free-solid-svg-icons'
+import { faMoneyBill } from '@fortawesome/free-solid-svg-icons'
+import { faChartLine } from '@fortawesome/free-solid-svg-icons'
+import { faFileLines } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom';
-import { ActivarClase } from './Helpers/ActivarClase';
 
 function MenuLateral({ isMenuOpen, toggleMenu }) {
 
 
     return (
         <>
-            {/* Overlay que cubre toda la pantalla cuando el menú está abierto */}
+
             {isMenuOpen && (
                 <div
                     className="menu-overlay"
-                    onClick={toggleMenu} // Cierra el menú al hacer clic fuera
+                    onClick={toggleMenu}
                 />
             )}
 
-            {/* Menú lateral */}
+
             <aside className={`side-menu ${isMenuOpen ? 'open' : 'closed'}`}>
                 <nav className='navegacion'>
                     <ul className="nav-list">
-                        <li>
+                        <li className='nav-item'>
+                            <FontAwesomeIcon className='icono' icon={faCashRegister} />
                             <NavLink
-                                className={ActivarClase}
+
                                 to="/cajero"
-                                onClick={toggleMenu} // Cierra al seleccionar
+                                onClick={toggleMenu}
                             >
                                 Cajero
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='nav-item'>
+                            <FontAwesomeIcon className='icono' icon={faMoneyBill} />
                             <NavLink
-                                className={ActivarClase}
+
                                 to="/corte"
                                 onClick={toggleMenu}
                             >
                                 Corte de Caja
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='nav-item'>
+                            <FontAwesomeIcon className='icono' icon={faChartLine} />
                             <NavLink
-                                className={ActivarClase}
+
                                 to="/dashboard"
                                 onClick={toggleMenu}
                             >
                                 Dashboard
                             </NavLink>
                         </li>
-                        <li>
+                        <li className='nav-item'>
+                            <FontAwesomeIcon className='icono' icon={faFileLines} />
                             <NavLink
-                                className={ActivarClase}
                                 to="/logs"
                                 onClick={toggleMenu}
                             >

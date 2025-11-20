@@ -1,4 +1,3 @@
-// App.js
 import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header';
@@ -13,7 +12,6 @@ function App() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    console.log("click en el boton");
   };
 
   return (

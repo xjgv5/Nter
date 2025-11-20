@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
 
 function Header({ isMenuOpen, toggleMenu }) {
     return (
@@ -12,7 +15,7 @@ function Header({ isMenuOpen, toggleMenu }) {
                     className="menu-toggle-btn"
                     onClick={toggleMenu}
                 >
-                    {isMenuOpen ? '✕' : '☰ '}
+                    {isMenuOpen ? <FontAwesomeIcon icon={faCircleXmark} /> : <FontAwesomeIcon icon={faBars} />}
                 </button>
             </div>
 

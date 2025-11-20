@@ -1,3 +1,8 @@
+:root {
+  --secondary-color: #2c3e50;
+  --light-primary-color: #34495e;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +12,11 @@
   font-family: Roboto;
 }
 
+
 .Layout {
-  border: 4px solid rgb(144, 11, 141);
+  /* border: 4px solid rgb(144, 11, 141); */
+  position: relative;
+  min-height: 100vh;
   width: 100%;
   height: 100vh;
   display: grid;
@@ -49,11 +57,7 @@
 
 /* Prueba
  */
-/* App.css */
-.Layout {
-  position: relative;
-  min-height: 100vh;
-}
+
 
 /* Overlay que cubre toda la pantalla */
 .menu-overlay {
@@ -86,19 +90,16 @@
 
 .side-menu.open {
   transform: translateX(0);
-  /* Muestra el menú */
 }
 
 .side-menu.closed {
   transform: translateX(-100%);
-  /* Oculta el menú */
 }
 
 /* Navegación */
 .navegacion {
   padding: 20px;
   margin-top: 60px;
-  /* Espacio para el header */
 }
 
 .nav-list {
@@ -122,8 +123,15 @@
   transition: background-color 0.3s;
 }
 
-.nav-list a:hover,
-.nav-list a.active {
+.nav-item {
+  /* border: 1px solid white; */
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+.nav-item:hover {
   background-color: #34495e;
 }
 
@@ -148,4 +156,13 @@
 
 .menu-toggle-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+.icono {
+  height: 50px;
+  width: 50px;
+  font-size: 50px;
+  font-weight: 200;
 }

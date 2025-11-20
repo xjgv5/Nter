@@ -4,6 +4,7 @@ import { faCashRegister } from '@fortawesome/free-solid-svg-icons'
 import { faMoneyBill } from '@fortawesome/free-solid-svg-icons'
 import { faChartLine } from '@fortawesome/free-solid-svg-icons'
 import { faFileLines } from '@fortawesome/free-solid-svg-icons'
+import { faStore } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom';
 
 function MenuLateral({ isMenuOpen, toggleMenu }) {
@@ -60,6 +61,15 @@ function MenuLateral({ isMenuOpen, toggleMenu }) {
                                 onClick={toggleMenu}
                             >
                                 Logs
+                            </NavLink>
+                        </li>
+                        <li className='nav-item'>
+                            <FontAwesomeIcon className='icono' icon={faStore} />
+                            <NavLink
+                                to="/locatario"
+                                onClick={toggleMenu}
+                            >
+                                Locatario
                             </NavLink>
                         </li>
                     </ul>

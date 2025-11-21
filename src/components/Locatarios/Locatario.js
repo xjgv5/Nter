@@ -11,11 +11,11 @@ function Locatario() {
             <h1 className='titulo'>{titulo}</h1>
             <div className="contenedor-botones">
                 <Link to="/crearBoleto" className='boton-primario'>
-                    <FontAwesomeIcon className='icono' icon={faTicket} />
+                    <FontAwesomeIcon className='icono small' icon={faTicket} />
                     Crear Boleto
                 </Link>
                 <Link to="/crearBoleto" className='boton-primario'>
-                    <FontAwesomeIcon className='icono' icon={faTicket} />
+                    <FontAwesomeIcon className='icono small' icon={faTicket} />
                     Crear Boleto
                 </Link>
 

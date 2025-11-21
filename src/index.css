@@ -1,9 +1,11 @@
 :root {
   --secondary-color: #212121;
-  --blue-color: #0f61dc;
-  --dark-blue-color: #093679;
+  --primary-blue-color: #458dd6;
+  --dark-blue-color: #2a6daf;
   --border-line-color: #bababa;
+  --hover-row-color: #e1dfdf;
   --section-color: #f6f6f6;
+  --dark-grey-color: #6a6a6a;
 }
 
 * {
@@ -165,13 +167,18 @@
 
 
 .icono {
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
+}
+
+.small {
+  height: 25px;
+  width: 25px;
 }
 
 /* componente locatario */
 .locatario-layout {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 100vw;
   height: 100vh;
   padding: 20px;
@@ -182,18 +189,20 @@
 
 .titulo {
   font-size: 50px;
-  color: var(--blue-color);
+  color: var(--primary-blue-color);
 }
 
 .contenedor-botones {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 25px;
+  margin-top: 20px;
 }
 
 .boton-primario {
-  background-color: var(--blue-color);
+  box-sizing: border-box;
+  background-color: var(--primary-blue-color);
   width: 100%;
   display: flex;
   align-items: center;
@@ -202,7 +211,7 @@
   font-size: 20px;
   color: white;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   text-decoration: none;
   transition: background-color 0.3s;
 }
@@ -221,6 +230,80 @@
 }
 
 .subtitulo {
-  font-size: 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary-blue-color);
+}
+
+.contenedor-resumen {
+  margin-top: 15px;
+}
+
+.elemento-menu {
+  font-size: 15px;
+  color: var(--dark-grey-color);
+}
+
+.t1 {
+  margin-bottom: 10px;
+}
+
+.fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border-line-color);
+  transition: background-color 0.3s;
+}
+
+.fila:hover {
+  background-color: var(--hover-row-color);
+}
+
+.fila:hover .chevron {
+  transform: translateX(7px);
+}
+
+.contenedor-imagen-perfil {
+  /* border: 1px solid blue; */
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.imagen-perfil {
+  aspect-ratio: 1;
+  width: 50px;
+}
+
+
+.texto-secundario {
+  color: var(--dark-grey-color);
+  font-size: 12px;
+}
+
+
+
+.icono-link {
+  color: var(--dark-grey-color);
+}
+
+.contenedor-izquierda,
+.contenedor-derecha {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.texto-secundario-negro {
+  color: black;
   font-weight: 600;
+}
+
+.chevron {
+  transition: transform 0.3s;
 }

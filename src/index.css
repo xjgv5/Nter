@@ -37,7 +37,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--secondary-color);
+  background-color: var(--dark-blue-color);
   color: white;
   padding: 20px;
   z-index: 1001;
@@ -63,7 +63,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: red; */
   z-index: 998;
 }
 
@@ -78,7 +78,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: var(--primary-blue-color);
   opacity: 0.9;
   color: white;
   transition: transform 0.3s ease;
@@ -130,7 +130,7 @@
 }
 
 .nav-item:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--dark-blue-color);
 }
 
 

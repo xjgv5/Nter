@@ -16,7 +16,7 @@ function Menu() {
             <div className="fila">
                 <div className="contenedor-izquierda">
                     <FontAwesomeIcon className='small icono-link' icon={faTicket} />
-                    <h3 className='elemento-menu'>Resumen</h3>
+                    <h3 className='elemento-menu'>Boletos e invitaciones</h3>
                 </div>
                 <div className="contenedor-derecha">
                     <FontAwesomeIcon className='small icono-link chevron' icon={faChevronRight} />

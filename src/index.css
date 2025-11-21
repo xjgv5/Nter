@@ -27,9 +27,8 @@
   display: grid;
   grid-template-areas:
     "header"
-    "principal"
-    "footer";
-  grid-template-rows: 100px 1fr 100px;
+    "principal";
+  grid-template-rows: 100px 1fr;
   grid-template-columns: 1fr;
 }
 
@@ -55,13 +54,6 @@
 }
 
 
-
-.footer {
-  grid-area: footer;
-}
-
-/* Prueba
- */
 
 
 /* Overlay que cubre toda la pantalla */

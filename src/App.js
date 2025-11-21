@@ -22,7 +22,7 @@ function App() {
           <MenuLateral isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
           <Principal />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

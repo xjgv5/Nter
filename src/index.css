@@ -4,7 +4,7 @@
   --dark-blue-color: #2a6daf;
   --border-line-color: #bababa;
   --hover-row-color: #e1dfdf;
-  --section-color: #f6f6f6;
+  --section-color: #fbfbfb;
   --dark-grey-color: #6a6a6a;
 }
 
@@ -272,7 +272,7 @@
   height: 50px;
   overflow: hidden;
   border-radius: 50%;
-  margin-right: 10px;
+
 }
 
 .imagen-perfil {
@@ -296,7 +296,7 @@
 .contenedor-derecha {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .texto-secundario-negro {

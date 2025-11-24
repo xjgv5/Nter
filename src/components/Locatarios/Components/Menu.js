@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTicket } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -14,10 +14,10 @@ function Menu() {
             <h2 className='subtitulo'>MENÚ</h2>
 
             <div className="fila">
-                <div className="contenedor-izquierda">
+                <Link to="/boletos-invitaciones" className="contenedor-izquierda link">
                     <FontAwesomeIcon className='small icono-link' icon={faTicket} />
                     <h3 className='elemento-menu'>Boletos e invitaciones</h3>
-                </div>
+                </Link>
                 <div className="contenedor-derecha">
                     <FontAwesomeIcon className='small icono-link chevron' icon={faChevronRight} />
                 </div>

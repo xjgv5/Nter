@@ -2,10 +2,12 @@
   --secondary-color: #212121;
   --primary-blue-color: #458dd6;
   --dark-blue-color: #2a6daf;
+  --light-blue-color: #e2effc;
   --border-line-color: #bababa;
   --hover-row-color: #e1dfdf;
   --section-color: #fbfbfb;
   --dark-grey-color: #6a6a6a;
+
 }
 
 * {
@@ -17,6 +19,9 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.link {
+  text-decoration: none;
+}
 
 .Layout {
   /* border: 4px solid rgb(144, 11, 141); */
@@ -169,7 +174,9 @@
 }
 
 /* componente locatario */
-.locatario-layout {
+.locatario-layout,
+.boletosInvitaciones-layout,
+.crearBoleto-layout {
   /* border: 2px solid red; */
   width: 100vw;
   height: 100vh;
@@ -298,4 +305,21 @@
 
 .chevron {
   transition: transform 0.3s;
+}
+
+.regresar-cabecera {
+  display: flex;
+  /* border: 2px solid red; */
+  align-items: center;
+  gap: 20px;
+}
+
+.boton-regresar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--light-blue-color);
+  color: var(--dark-blue-color);
+  border-radius: 50%;
+  padding: 15px;
 }

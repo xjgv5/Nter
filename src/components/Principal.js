@@ -6,7 +6,8 @@ import Corte from './Corte';
 import Dashboard from './Dashboard';
 import Logs from './Logs';
 import Locatario from './Locatarios/Locatario';
-import CrearBoleto from './BoletosInvitaciones/CrearBoleto/CrearBoleto';
+import CrearBoleto from './CrearBoleto/CrearBoleto';
+import BoletosInvitaciones from './BoletosInvitaciones/BoletosInvitaciones';
 import Configuracion from './Locatarios/Components/ConfiguracionComponents/Configuracion';
 function Principal() {
     return (
@@ -18,6 +19,7 @@ function Principal() {
                 <Route path="/logs" element={<Logs />} />
                 <Route path="/locatario" element={<Locatario />} />
                 <Route path="/crearBoleto" element={<CrearBoleto />} />
+                <Route path="/boletos-invitaciones" element={<BoletosInvitaciones />} />
                 <Route path="/configuracion" element={<Configuracion />} />
             </Routes>
         </div>

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTicket } from '@fortawesome/free-solid-svg-icons';
 import RegresarCabecera from '../RegresarCabecera'
+// import ListadoBoletos from './componentes/FiltroBoletos'
+import { ListaBoletos } from './componentes/ListaBoletos';
 function BoletosInvitaciones() {
     const titulo = "Boletos e Invitaciones";
     const ruta = "/locatario"
@@ -15,6 +17,7 @@ function BoletosInvitaciones() {
                     Crear Boleto
                 </Link>
             </div>
+            <ListaBoletos />
         </div>
     );
 }

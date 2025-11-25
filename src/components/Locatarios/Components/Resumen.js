@@ -5,7 +5,7 @@ import { faGear } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 function Resumen() {
     return (
-        <div className='resumen-layout'>
+        <div className='menu-layout'>
             <h2 className='subtitulo'>RESUMEN</h2>
 
             <div className="contenedor-resumen">

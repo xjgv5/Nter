@@ -444,14 +444,29 @@ label {
   font-weight: 600;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="date"] {
   border: 1px solid var(--border-line-color);
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 10px;
   font-size: 16px;
   font-weight: 500;
 }
 
+textarea {
+  border: 1px solid var(--border-line-color);
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.enviar {
+  margin-top: 15px;
+  border: none;
+  width: 100%;
+}
 
 .radio-grupo {
   display: flex;

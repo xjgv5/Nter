@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { RadioBtn } from './RadioBtn'; // Ajusta la ruta según tu estructura
+import { RadioBtn } from './RadioBtn'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQrcode } from '@fortawesome/free-solid-svg-icons';
 
 export const Formulario = () => {
     const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
 
-    // Array con las opciones de duración
     const opcionesDuracion = [
         { value: '1hr', label: '1 hr' },
         { value: '2hr', label: '2 hrs' },
@@ -41,7 +42,18 @@ export const Formulario = () => {
                     ))}
                 </div>
 
+                <label htmlFor="fecha">Fecha de uso</label>
+                <input type="date" id="fecha" />
+
+                <label htmlFor="notas">Notas</label>
+                <textarea id="notas" rows="4" placeholder='Ingrese alguna nota a recordar'></textarea>
+
             </div>
+
+            <button className='boton-primario enviar' type="submit">
+                <FontAwesomeIcon icon={faQrcode} />
+                Aceptar y generar QR
+            </button>
         </form>
     )
 }

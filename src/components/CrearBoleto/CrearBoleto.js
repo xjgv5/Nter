@@ -1,10 +1,14 @@
 import React from 'react';
+import { RegresarCabecera } from '../RegresarCabecera';
+import { Formulario } from './componentes/Formulario';
 
 function CrearBoleto() {
     const titulo = "Crear Boleto";
+    const ruta = "/boletos-invitaciones"
     return (
         <div className='crearBoleto-layout'>
-            <h1 className='titulo'>{titulo}</h1>
+            <RegresarCabecera titulo={titulo} ruta={ruta} />
+            <Formulario />
         </div>
     );
 }

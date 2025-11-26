@@ -226,6 +226,8 @@
 }
 
 .menu-layout {
+  display: flex;
+  flex-direction: column;
   margin-top: 20px;
   border: 1px solid var(--border-line-color);
   background-color: var(--section-color);
@@ -433,4 +435,63 @@
 .filtro-activo:hover {
   background-color: var(--dark-blue-color);
   border-color: var(--dark-blue-color);
+}
+
+label {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  border: 1px solid var(--border-line-color);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.radio-grupo {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE y Edge */
+}
+
+.radio-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+.radio-btn input {
+  position: absolute;
+  opacity: 0;
+}
+
+.btn-texto {
+  display: inline-block;
+  min-width: 100px;
+  max-width: 150px;
+  padding: 10px 24px;
+  background-color: transparent;
+  border: 2px solid var(--border-line-color);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.radio-btn input:checked+.btn-texto {
+  background-color: var(--primary-blue-color);
+  color: white;
+  border-color: var(--primary-blue-color);
+}
+
+.radio-btn:hover .btn-texto {
+  background-color: var(--hover-color);
 }

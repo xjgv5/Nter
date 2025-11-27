@@ -2,30 +2,59 @@ import React, { useState } from 'react'
 import { RadioBtn } from './RadioBtn'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQrcode } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 export const Formulario = () => {
+    const [nombre, setNombre] = useState('');
     const [opcionSeleccionada, setOpcionSeleccionada] = useState('');
+    const [fecha, setFecha] = useState('');
+    const [notas, setNotas] = useState('');
 
     const opcionesDuracion = [
-        { value: '1hr', label: '1 hr' },
-        { value: '2hr', label: '2 hrs' },
-        { value: '3hr', label: '3 hrs' },
-        { value: '4hr', label: '4 hrs' },
-        { value: '5hr', label: '5 hrs' },
-        { value: '6hr', label: '6 hrs' },
-        { value: '7hr', label: '7 hrs' },
-        { value: '8hr', label: '8 hrs' },
-        { value: '9hr', label: '9 hrs' },
-        { value: '10hr', label: '10 hrs' }
+        { value: '1 hora', label: '1 hora' },
+        { value: '2 horas', label: '2 horas' },
+        { value: '3 horas', label: '3 horas' },
+        { value: '4 horas', label: '4 horas' },
+        { value: '5 horas', label: '5 horas' },
+        { value: '6 horas', label: '6 horas' },
+        { value: '7 horas', label: '7 horas' },
+        { value: '8 horas', label: '8 horas' },
+        { value: '9 horas', label: '9 horas' },
+        { value: '10 horas', label: '10 horas' }
     ];
 
+    const redirigir = useNavigate();
+
+    const enviarDatosFormulario = (e) => {
+        e.preventDefault();
+
+        const datosFormulario = {
+            nombre,
+            duracion: opcionSeleccionada,
+            fecha,
+            notas
+        };
+
+        console.log('Datos del formulario:', datosFormulario);
+
+        localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
+
+        redirigir('/boleto');
+    };
+
     return (
-        <form>
+        <form onSubmit={enviarDatosFormulario}>
             <div className="menu-layout">
                 <h3 className="subtitulo">LLENE EL FORMULARIO</h3>
 
                 <label htmlFor="nombre">Nombre del invitado</label>
-                <input type="text" id="nombre" placeholder='Nombre completo' />
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder='Nombre completo'
+                    value={nombre}
+                    onChange={(e) => setNombre(e.target.value)}
+                />
 
                 <label>Duración de la estadía</label>
 
@@ -43,10 +72,21 @@ export const Formulario = () => {
                 </div>
 
                 <label htmlFor="fecha">Fecha de uso</label>
-                <input type="date" id="fecha" />
+                <input
+                    type="date"
+                    id="fecha"
+                    value={fecha}
+                    onChange={(e) => setFecha(e.target.value)}
+                />
 
                 <label htmlFor="notas">Notas</label>
-                <textarea id="notas" rows="4" placeholder='Ingrese alguna nota a recordar'></textarea>
+                <textarea
+                    id="notas"
+                    rows="4"
+                    placeholder='Ingrese alguna nota a recordar'
+                    value={notas}
+                    onChange={(e) => setNotas(e.target.value)}
+                ></textarea>
 
             </div>
 

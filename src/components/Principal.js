@@ -9,6 +9,7 @@ import Locatario from './Locatarios/Locatario';
 import CrearBoleto from './CrearBoleto/CrearBoleto';
 import BoletosInvitaciones from './BoletosInvitaciones/BoletosInvitaciones';
 import Configuracion from './Locatarios/Components/ConfiguracionComponents/Configuracion';
+import Boleto from './Boleto/Boleto';
 function Principal() {
     return (
         <div className="principal">
@@ -21,6 +22,7 @@ function Principal() {
                 <Route path="/crearBoleto" element={<CrearBoleto />} />
                 <Route path="/boletos-invitaciones" element={<BoletosInvitaciones />} />
                 <Route path="/configuracion" element={<Configuracion />} />
+                <Route path="/boleto" element={<Boleto />} />
             </Routes>
         </div>
     );

@@ -3,7 +3,7 @@ import { RegresarCabecera } from '../RegresarCabecera';
 import { Formulario } from './componentes/Formulario';
 
 function CrearBoleto() {
-    const titulo = "Crear Boleto";
+    const titulo = "Nuevo Boleto";
     const ruta = "/boletos-invitaciones"
     return (
         <div className='crearBoleto-layout'>

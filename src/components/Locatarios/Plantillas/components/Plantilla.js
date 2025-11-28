@@ -7,11 +7,11 @@ export const Plantilla = ({ listaPlantillas }) => {
             <div className="datos-plantilla">
                 <div className="cabecera-plantilla">
                     <h3 className="titulo-plantilla">{nombre}</h3>
-                    <p className="id-plantilla">ID: {id}</p>
+                    <p className="id-plantilla"><strong>ID:</strong> {id}</p>
                 </div>
                 <div className="info-plantilla">
-                    <p className="duracion-plantilla">Duración: {duracion}</p>
-                    <p className="fecha-plantilla">Fecha: {fecha}</p>
+                    <p className="duracion-plantilla"><strong>Duración:</strong> {duracion}</p>
+                    <p className="fecha-plantilla"><strong>Fecha:</strong> {fecha}</p>
 
                 </div>
 

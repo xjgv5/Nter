@@ -8,7 +8,7 @@
   --section-color: #fbfbfb;
   --dark-grey-color: #6a6a6a;
   --hover-color: #e9ecef;
-
+  --red-color: #e40f0f;
 }
 
 * {
@@ -49,7 +49,6 @@
   z-index: 1001;
 }
 
-/* Estilos de la navegacion  */
 
 
 
@@ -183,7 +182,8 @@
 .locatario-layout,
 .boletosInvitaciones-layout,
 .crearBoleto-layout,
-.boleto-layout {
+.boleto-layout,
+.plantillas-layout {
   /* border: 2px solid red; */
   width: 100vw;
   height: 100vh;
@@ -208,8 +208,8 @@
 }
 
 .boton-primario {
-  box-sizing: border-box;
   background-color: var(--primary-blue-color);
+  border: 2px solid var(--primary-blue-color);
   width: 100%;
   display: flex;
   align-items: center;
@@ -217,7 +217,7 @@
   gap: 10px;
   font-size: 20px;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 20px;
   border-radius: 15px;
   text-decoration: none;
   transition: background-color 0.3s;
@@ -225,6 +225,43 @@
 
 .boton-primario:hover {
   background-color: var(--dark-blue-color);
+}
+
+.boton-secundario {
+  background-color: white;
+  border: 2px solid var(--primary-blue-color);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--primary-blue-color);
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+.boton-secundario:hover {
+  background-color: var(--primary-blue-color);
+  color: white;
+}
+
+.boton-eliminar {
+  background-color: var(--red-color);
+  border: 2px solid var(--red-color);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+  transition: background-color 0.3s;
 }
 
 .menu-layout {
@@ -473,7 +510,6 @@ textarea {
 
 .enviar {
   margin-top: 15px;
-  border: none;
   width: 100%;
   cursor: pointer;
 }
@@ -546,4 +582,142 @@ textarea {
   width: 300px;
   background-color: white;
   border-radius: 30px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #666;
+  padding: 0.5rem;
+}
+
+.modal-cerrar:hover {
+  color: #333;
+}
+
+.modal-icono {
+  margin-bottom: 1rem;
+  color: #4CAF50;
+  /* Color verde para éxito */
+}
+
+.modal-contenido h3 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.modal-contenido p {
+  margin-bottom: 2rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.modal-botones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.modal-botones .boton-primario,
+.modal-botones .boton-secundario {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+.datos-plantilla {
+  border: 2px solid var(--border-line-color);
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 10px 20px;
+}
+
+.cabecera-plantilla {
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-end; */
+  gap: 10px;
+}
+
+.titulo-plantilla {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.id-plantilla {
+  font-weight: 400;
+  font-size: 15px;
+  /* margin-bottom: 3px; */
+}
+
+.info-plantilla {
+  margin-top: 8px;
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+}
+
+.duracion-plantilla,
+.fecha-plantilla {
+  font-weight: 500;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.contenedor-notas {
+  margin-top: 15px;
+}
+
+.titulo-notas {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.texto-notas {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 480px) {
+  .modal-botones {
+    flex-direction: column;
+  }
+
+  .modal-contenido {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
 }

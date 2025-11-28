@@ -1,4 +1,3 @@
-// MainContent.js
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Cajero from './Cajero';
@@ -10,6 +9,7 @@ import CrearBoleto from './CrearBoleto/CrearBoleto';
 import BoletosInvitaciones from './BoletosInvitaciones/BoletosInvitaciones';
 import Configuracion from './Locatarios/Components/ConfiguracionComponents/Configuracion';
 import Boleto from './Boleto/Boleto';
+import ListadoPlantillas from './Locatarios/Plantillas/ListadoPlantillas';
 function Principal() {
     return (
         <div className="principal">
@@ -23,6 +23,7 @@ function Principal() {
                 <Route path="/boletos-invitaciones" element={<BoletosInvitaciones />} />
                 <Route path="/configuracion" element={<Configuracion />} />
                 <Route path="/boleto" element={<Boleto />} />
+                <Route path="/plantillas" element={<ListadoPlantillas />} />
             </Routes>
         </div>
     );

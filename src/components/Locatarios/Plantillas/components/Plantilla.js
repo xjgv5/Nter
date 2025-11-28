@@ -1,0 +1,34 @@
+import React from 'react'
+
+export const Plantilla = ({ listaPlantillas }) => {
+    const { id, nombre, duracion, fecha, notas } = listaPlantillas
+    return (
+        <div className="plantilla">
+            <div className="datos-plantilla">
+                <div className="cabecera-plantilla">
+                    <h3 className="titulo-plantilla">{nombre}</h3>
+                    <p className="id-plantilla">ID: {id}</p>
+                </div>
+                <div className="info-plantilla">
+                    <p className="duracion-plantilla">Duración: {duracion}</p>
+                    <p className="fecha-plantilla">Fecha: {fecha}</p>
+
+                </div>
+
+                <div className="contenedor-notas">
+                    <p className="titulo-notas">Notas:</p>
+                    <p className="texto-notas">{notas}</p>
+                </div>
+
+                <div className="contenedor-botones">
+                    <button className='boton-primario'>Usar</button>
+                    <button className='boton-secundario'>Editar</button>
+                    <button className='boton-eliminar'>Eliminar</button>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Plantilla
+

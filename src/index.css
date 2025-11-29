@@ -72,26 +72,6 @@ body {
   top: 0;
 }
 
-/* Menú lateral moderno */
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  z-index: 998;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
 .side-menu {
   position: fixed;
   display: flex;
@@ -103,13 +83,15 @@ body {
   width: 85vw;
   max-width: 320px;
   height: 100vh;
-  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  background: linear-gradient(180deg, var(--dark-blue-color) 0%, #1e4e8c 100%);
   color: white;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
   transform: translateX(-100%);
   padding-top: 80px;
   box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .side-menu.open {
@@ -120,7 +102,7 @@ body {
   transform: translateX(-100%);
 }
 
-/* Navegación estilo moderno */
+/* Navegación con colores armonizados */
 .navegacion {
   padding: 20px;
   width: 100%;
@@ -139,7 +121,7 @@ body {
 
 .nav-list a {
   display: block;
-  color: #cbd5e1;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 18px;
   font-weight: 500;
   text-decoration: none;
@@ -147,6 +129,7 @@ body {
   border-radius: var(--border-radius-md);
   transition: all 0.3s ease;
   border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .nav-item {
@@ -156,15 +139,32 @@ body {
   gap: 12px;
 }
 
-.nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
 .nav-list a:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   color: white;
   transform: translateX(8px);
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Overlay más sutil */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(29, 78, 216, 0.3);
+  /* Color que armoniza con el navbar */
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .header-content {

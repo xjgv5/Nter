@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Cajero from './Cajero';
+import Cajero from './Cajero/Cajero';
 import Corte from './Corte';
 import Dashboard from './Dashboard';
 import Logs from './Logs';

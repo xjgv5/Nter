@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
 import Plantilla from './components/Plantilla'
 import RegresarCabecera from '../../RegresarCabecera'
-
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
 export const ListadoPlantillas = () => {
     const titulo = "Plantillas"
     const ruta = "/crearBoleto"
 
-    // Obtener plantillas del localStorage y manejar el caso null
     const listaPlantillas = localStorage.getItem("plantillas")
     const plantillas = listaPlantillas ? JSON.parse(listaPlantillas) : []
 
@@ -26,6 +26,12 @@ export const ListadoPlantillas = () => {
                         />
                     ))
                 )}
+            </div>
+            <div className="contenedor-botones">
+                <Link to="/" className='boton-primario'>
+                    <FontAwesomeIcon icon={faHouse} />
+                    Inicio
+                </Link>
             </div>
         </div>
     )

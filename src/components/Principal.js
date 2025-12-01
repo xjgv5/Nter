@@ -10,10 +10,12 @@ import BoletosInvitaciones from './BoletosInvitaciones/BoletosInvitaciones';
 import Configuracion from './Locatarios/Components/ConfiguracionComponents/Configuracion';
 import Boleto from './Boleto/Boleto';
 import ListadoPlantillas from './Locatarios/Plantillas/ListadoPlantillas';
+import Inicio from './Inicio';
 function Principal() {
     return (
         <div className="principal">
             <Routes>
+                <Route path="/" element={<Inicio />} />
                 <Route path="/cajero" element={<Cajero />} />
                 <Route path="/corte" element={<Corte />} />
                 <Route path="/dashboard" element={<Dashboard />} />

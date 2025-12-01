@@ -1,5 +1,4 @@
 :root {
-  /* Paleta moderna inspirada en Hero UI */
   --primary-blue-color: #3b82f6;
   --dark-blue-color: #1d4ed8;
   --light-blue-color: #dbeafe;
@@ -12,7 +11,6 @@
   --red-color: #ef4444;
   --dark-red-color: #dc2626;
 
-  /* Nuevas variables para estilo Hero UI */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -42,7 +40,6 @@ body {
   text-decoration: none;
 }
 
-/* Layout principal - Mobile First */
 .Layout {
   position: relative;
   min-height: 100vh;
@@ -56,7 +53,6 @@ body {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
-/* Header estilo Hero UI */
 .header {
   grid-area: header;
   display: flex;
@@ -102,7 +98,6 @@ body {
   transform: translateX(-100%);
 }
 
-/* Navegación con colores armonizados */
 .navegacion {
   padding: 20px;
   width: 100%;
@@ -146,7 +141,6 @@ body {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Overlay más sutil */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -154,7 +148,6 @@ body {
   width: 100vw;
   height: 100vh;
   background: rgba(29, 78, 216, 0.3);
-  /* Color que armoniza con el navbar */
   backdrop-filter: blur(4px);
   z-index: 998;
   opacity: 0;
@@ -195,7 +188,6 @@ body {
   transform: translateY(-1px);
 }
 
-/* Iconos */
 .icono {
   height: 40px;
   width: 40px;
@@ -211,7 +203,6 @@ body {
   width: 28px;
 }
 
-/* Contenedores de páginas */
 .locatario-layout,
 .boletosInvitaciones-layout,
 .crearBoleto-layout,
@@ -233,8 +224,14 @@ body {
   letter-spacing: -0.025em;
 }
 
-/* Botones estilo Hero UI */
 .contenedor-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.contenedor-botones-vertical {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -315,7 +312,6 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
-/* Contenedores de contenido */
 .menu-layout {
   width: 90vw;
   display: flex;
@@ -364,7 +360,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* Filas modernas */
 .fila {
   display: flex;
   align-items: center;
@@ -525,7 +520,6 @@ body {
   font-weight: 600;
 }
 
-/* Filtros modernos */
 .filtros-boletos {
   margin-top: 20px;
   background: white;
@@ -566,7 +560,6 @@ body {
   background: linear-gradient(135deg, var(--dark-blue-color) 0%, #1e40af 100%);
 }
 
-/* Formularios modernos */
 label {
   margin-top: 20px;
   margin-bottom: 8px;
@@ -623,7 +616,6 @@ textarea:focus {
   cursor: pointer;
 }
 
-/* Radio buttons modernos */
 .radio-grupo {
   display: flex;
   gap: 12px;
@@ -684,7 +676,6 @@ textarea:focus {
   transform: translateY(-1px);
 }
 
-/* Info boleto */
 .info-boleto {
   margin-top: 24px;
 }
@@ -703,7 +694,6 @@ textarea:focus {
   color: var(--dark-grey-color);
 }
 
-/* QR Code moderno */
 .contenedor-qr {
   display: flex;
   justify-content: center;
@@ -720,7 +710,6 @@ textarea:focus {
   border-radius: var(--border-radius-lg);
 }
 
-/* Modal estilo Hero UI */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -805,7 +794,6 @@ textarea:focus {
   width: 100%;
 }
 
-/* Plantillas modernas */
 .datos-plantilla {
   border: 1px solid var(--border-line-color);
   border-radius: var(--border-radius-lg);
@@ -877,7 +865,6 @@ textarea:focus {
   line-height: 1.6;
 }
 
-/* Media Queries - Mobile First con mejoras progresivas */
 @media (max-width: 480px) {
   .modal-botones {
     flex-direction: column;

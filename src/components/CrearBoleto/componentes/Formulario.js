@@ -3,6 +3,9 @@ import { RadioBtn } from './RadioBtn'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQrcode, faFloppyDisk, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { faFile } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'react-router-dom';
+import { generarDatosQR, guardarPlantilla, obtenerFechaActual } from '../../Helpers/FormularioHelper'
 
 export const Formulario = () => {
     const [nombre, setNombre] = useState('');
@@ -10,6 +13,7 @@ export const Formulario = () => {
     const [fecha, setFecha] = useState('');
     const [notas, setNotas] = useState('');
     const [mostrarModal, setMostrarModal] = useState(false);
+    const [error, setError] = useState('');
 
     const opcionesDuracion = [
         { value: '1 hora', label: '1 hora' },
@@ -24,18 +28,11 @@ export const Formulario = () => {
         { value: '10 horas', label: '10 horas' }
     ];
 
-    const obtenerFechaActual = () => {
-        const hoy = new Date();
-        const año = hoy.getFullYear();
-        const mes = String(hoy.getMonth() + 1).padStart(2, '0');
-        const dia = String(hoy.getDate()).padStart(2, '0');
-        return `${año}-${mes}-${dia}`;
-    };
-
     const redirigir = useNavigate();
 
     const generarQR = (e) => {
         e.preventDefault();
+        setError('');
 
         const datosFormulario = {
             nombre,
@@ -44,32 +41,30 @@ export const Formulario = () => {
             notas
         };
 
-        console.log('Datos del formulario:', datosFormulario);
-        localStorage.setItem('datosFormulario', JSON.stringify(datosFormulario));
-        redirigir('/boleto');
+        try {
+            generarDatosQR(datosFormulario, redirigir);
+        } catch (err) {
+            setError(err.message);
+        }
     };
 
-    const guardarPlantilla = (e) => {
+    const handleGuardarPlantilla = (e) => {
         e.preventDefault();
+        setError('');
 
-        const nuevaPlantilla = {
-            id: Date.now(),
+        const datosFormulario = {
             nombre,
             duracion: opcionSeleccionada,
             fecha,
-            notas,
-            fechaCreacion: new Date().toISOString()
+            notas
         };
 
-        const plantillasExistentes = JSON.parse(localStorage.getItem('plantillas')) || [];
-        const nuevasPlantillas = [...plantillasExistentes, nuevaPlantilla];
-        localStorage.setItem('plantillas', JSON.stringify(nuevasPlantillas));
-
-        console.log('Plantilla guardada:', nuevaPlantilla);
-        console.log('Total de plantillas:', nuevasPlantillas.length);
-
-        // Mostrar el modal en lugar del alert
-        setMostrarModal(true);
+        try {
+            guardarPlantilla(datosFormulario);
+            setMostrarModal(true);
+        } catch (err) {
+            setError(err.message);
+        }
     };
 
     const cerrarModal = () => {
@@ -86,6 +81,12 @@ export const Formulario = () => {
             <form onSubmit={generarQR}>
                 <div className="menu-layout">
                     <h3 className="subtitulo">LLENE EL FORMULARIO</h3>
+
+                    {error && (
+                        <div className="error-mensaje">
+                            {error}
+                        </div>
+                    )}
 
                     <label htmlFor="nombre">Nombre del invitado</label>
                     <input
@@ -132,18 +133,23 @@ export const Formulario = () => {
 
                 </div>
 
-                <button className='boton-primario enviar' type="submit">
-                    <FontAwesomeIcon icon={faQrcode} />
-                    Aceptar y generar QR
-                </button>
+                <div className="contenedor-botones-vertical">
+                    <button className='boton-primario' type="submit">
+                        <FontAwesomeIcon icon={faQrcode} />
+                        Aceptar y generar QR
+                    </button>
 
-                <button className='boton-secundario enviar' type="button" onClick={guardarPlantilla}>
-                    <FontAwesomeIcon icon={faFloppyDisk} />
-                    Guardar como plantilla
-                </button>
+                    <button className='boton-secundario' type="button" onClick={handleGuardarPlantilla}>
+                        <FontAwesomeIcon icon={faFloppyDisk} />
+                        Guardar como plantilla
+                    </button>
+                    <Link to="/plantillas" className='boton-primario'>
+                        <FontAwesomeIcon icon={faFile} />
+                        Ver plantillas
+                    </Link>
+                </div>
             </form>
 
-            {/* Modal de confirmación */}
             {mostrarModal && (
                 <div className="modal-overlay">
                     <div className="modal-contenido">

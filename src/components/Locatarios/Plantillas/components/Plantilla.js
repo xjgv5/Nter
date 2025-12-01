@@ -1,7 +1,25 @@
 import React from 'react'
 
-export const Plantilla = ({ listaPlantillas }) => {
-    const { id, nombre, duracion, fecha, notas } = listaPlantillas
+export const Plantilla = ({
+    listaPlantillas,
+    onEliminar,
+    onUsar,
+    onEditar
+}) => {
+    const { id, nombre, duracion, fecha, notas } = listaPlantillas;
+
+    const handleEliminar = () => {
+        onEliminar(listaPlantillas);
+    };
+
+    const handleUsar = () => {
+        onUsar(listaPlantillas);
+    };
+
+    const handleEditar = () => {
+        onEditar(listaPlantillas);
+    };
+
     return (
         <div className="plantilla">
             <div className="datos-plantilla">
@@ -12,23 +30,36 @@ export const Plantilla = ({ listaPlantillas }) => {
                 <div className="info-plantilla">
                     <p className="duracion-plantilla"><strong>Duración:</strong> {duracion}</p>
                     <p className="fecha-plantilla"><strong>Fecha:</strong> {fecha}</p>
-
                 </div>
 
                 <div className="contenedor-notas">
                     <p className="titulo-notas">Notas:</p>
-                    <p className="texto-notas">{notas}</p>
+                    <p className="texto-notas">{notas || 'Sin notas'}</p>
                 </div>
 
                 <div className="contenedor-botones">
-                    <button className='boton-primario'>Usar</button>
-                    <button className='boton-secundario'>Editar</button>
-                    <button className='boton-eliminar'>Eliminar</button>
+                    <button
+                        className='boton-primario'
+                        onClick={handleUsar}
+                    >
+                        Usar
+                    </button>
+                    <button
+                        className='boton-secundario'
+                        onClick={handleEditar}
+                    >
+                        Editar
+                    </button>
+                    <button
+                        className='boton-eliminar'
+                        onClick={handleEliminar}
+                    >
+                        Eliminar
+                    </button>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Plantilla
-
+export default Plantilla;

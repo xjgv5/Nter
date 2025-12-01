@@ -2,8 +2,10 @@ import React from 'react'
 
 export const SinPlantillas = () => {
     return (
-        <div>
+        <div className="sin-plantillas">
             <p>No hay plantillas guardadas</p>
         </div>
     )
 }
+
+export default SinPlantillas

@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import MenuLateral from './components/MenuLateral';
 import Principal from './components/Principal';
 import { useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 

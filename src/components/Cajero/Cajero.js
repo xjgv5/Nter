@@ -69,7 +69,7 @@ function Cajero() {
                 </div>
 
                 <Registros />
-                <BotonEscanear />
+                {/* <BotonEscanear /> */}
             </form>
 
             {/* Modal de escaneo */}

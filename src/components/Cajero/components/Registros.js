@@ -2,14 +2,15 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle, faTimesCircle, faClock } from '@fortawesome/free-solid-svg-icons';
 
-export const Registros = ({ datos = [], onVerDetalle, onEditar, onEliminar }) => {
+export const TablaMovimientos = ({ datos = [] }) => {
 
+    // Datos de ejemplo
     const datosEjemplo = datos.length > 0 ? datos : [
-        { id: 1, fecha: '2024-01-15', folio: '1234567890', importe: 1500.00, estatus: 'pagado' },
-        { id: 2, fecha: '2024-01-16', folio: '1234567891', importe: 2300.50, estatus: 'pendiente' },
-        { id: 3, fecha: '2024-01-17', folio: '1234567892', importe: 1800.00, estatus: 'cancelado' },
-        { id: 4, fecha: '2024-01-18', folio: '1234567893', importe: 3200.75, estatus: 'pagado' },
-        { id: 5, fecha: '2024-01-19', folio: '1234567894', importe: 950.00, estatus: 'pendiente' },
+        { id: 1, fecha: '2024-01-15', folio: 'FOL-001', importe: 1500.00, estatus: 'pagado' },
+        { id: 2, fecha: '2024-01-16', folio: 'FOL-002', importe: 2300.50, estatus: 'pendiente' },
+        { id: 3, fecha: '2024-01-17', folio: 'FOL-003', importe: 1800.00, estatus: 'cancelado' },
+        { id: 4, fecha: '2024-01-18', folio: 'FOL-004', importe: 3200.75, estatus: 'pagado' },
+        { id: 5, fecha: '2024-01-19', folio: 'FOL-005', importe: 950.00, estatus: 'pendiente' },
     ];
 
     const formatearFecha = (fecha) => {
@@ -23,7 +24,9 @@ export const Registros = ({ datos = [], onVerDetalle, onEditar, onEliminar }) =>
     const formatearImporte = (importe) => {
         return new Intl.NumberFormat('es-MX', {
             style: 'currency',
-            currency: 'MXN'
+            currency: 'MXN',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 2
         }).format(importe);
     };
 
@@ -58,81 +61,107 @@ export const Registros = ({ datos = [], onVerDetalle, onEditar, onEliminar }) =>
     };
 
     return (
-        <div className="tabla-contenedor">
-            <div className="tabla-cabecera">
-                <h3 className="subtitulo">Movimientos</h3>
-                <div className="tabla-info">
-                    <span className="total-registros">
-                        Total: {datosEjemplo.length} registro(s)
-                    </span>
-                </div>
+        <div className="tabla-movimientos-contenedor">
+            <div className="tabla-header">
+                <h3 className="tabla-titulo">Movimientos</h3>
+                {datosEjemplo.length > 0 && (
+                    <div className="tabla-total">
+                        <span className="total-badge">{datosEjemplo.length} registros</span>
+                    </div>
+                )}
             </div>
 
-            <div className="tabla-responsive">
-                <table className="tabla-movimientos">
-                    <thead>
-                        <tr>
-                            <th className="columna-numero">No.</th>
-                            <th className="columna-fecha">Fecha</th>
-                            <th className="columna-folio">Folio</th>
-                            <th className="columna-importe">Importe</th>
-                            <th className="columna-estatus">Estatus</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {datosEjemplo.map((item, index) => (
-                            <tr key={item.id || index}>
-                                <td className="celda-numero">
-                                    <span className="numero-indice">{index + 1}</span>
-                                </td>
-                                <td className="celda-fecha">
-                                    {formatearFecha(item.fecha)}
-                                </td>
-                                <td className="celda-folio">
-                                    <span className="folio-texto">{item.folio}</span>
-                                </td>
-                                <td className="celda-importe">
-                                    <span className="importe-texto">{formatearImporte(item.importe)}</span>
-                                </td>
-                                <td className="celda-estatus">
-                                    <div className={`estatus-badge ${getEstatusClase(item.estatus)}`}>
-                                        {getEstatusIcono(item.estatus)}
-                                        <span>{getEstatusTexto(item.estatus)}</span>
-                                    </div>
-                                </td>
-
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-
-            {/* Si no hay datos */}
-            {datosEjemplo.length === 0 && (
+            {datosEjemplo.length === 0 ? (
                 <div className="tabla-vacia">
+                    <div className="tabla-vacia-icono">
+                        <FontAwesomeIcon icon={faTimesCircle} />
+                    </div>
                     <p>No hay movimientos registrados</p>
                 </div>
-            )}
+            ) : (
+                <>
+                    {/* Vista Mobile (tarjetas) */}
+                    <div className="tabla-mobile">
+                        {datosEjemplo.map((item, index) => (
+                            <div key={item.id || index} className="movimiento-card">
+                                <div className="movimiento-header">
+                                    <span className="movimiento-numero">#{index + 1}</span>
+                                    <span className="movimiento-folio">{item.folio}</span>
+                                </div>
 
-            {/* Paginación (opcional) */}
-            {/* {datosEjemplo.length > 0 && (
-                <div className="tabla-paginacion">
-                    <div className="paginacion-info">
-                        Mostrando 1-{datosEjemplo.length} de {datosEjemplo.length} registros
+                                <div className="movimiento-info">
+                                    <div className="info-item">
+                                        <span className="info-label">Fecha:</span>
+                                        <span className="info-value">{formatearFecha(item.fecha)}</span>
+                                    </div>
+
+                                    <div className="info-item">
+                                        <span className="info-label">Importe:</span>
+                                        <span className="info-value importe">{formatearImporte(item.importe)}</span>
+                                    </div>
+
+                                    <div className="info-item">
+                                        <span className="info-label">Estatus:</span>
+                                        <div className={`estatus-mobile ${getEstatusClase(item.estatus)}`}>
+                                            {getEstatusIcono(item.estatus)}
+                                            <span>{getEstatusTexto(item.estatus)}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                    <div className="paginacion-controles">
-                        <button className="paginacion-btn" disabled>
-                            Anterior
-                        </button>
-                        <span className="pagina-actual">Página 1</span>
-                        <button className="paginacion-btn">
-                            Siguiente
-                        </button>
+
+                    {/* Vista Desktop (tabla) - se muestra en pantallas más grandes */}
+                    <div className="tabla-desktop">
+                        <table className="tabla">
+                            <thead>
+                                <tr>
+                                    <th className="columna-no">No.</th>
+                                    <th className="columna-fecha">Fecha</th>
+                                    <th className="columna-folio">Folio</th>
+                                    <th className="columna-importe">Importe</th>
+                                    <th className="columna-estatus">Estatus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {datosEjemplo.map((item, index) => (
+                                    <tr key={item.id || index}>
+                                        <td className="celda-no">
+                                            <span className="numero">{index + 1}</span>
+                                        </td>
+                                        <td className="celda-fecha">{formatearFecha(item.fecha)}</td>
+                                        <td className="celda-folio">
+                                            <span className="folio">{item.folio}</span>
+                                        </td>
+                                        <td className="celda-importe">
+                                            <span className="importe">{formatearImporte(item.importe)}</span>
+                                        </td>
+                                        <td className="celda-estatus">
+                                            <div className={`estatus-desktop ${getEstatusClase(item.estatus)}`}>
+                                                {getEstatusIcono(item.estatus)}
+                                                <span>{getEstatusTexto(item.estatus)}</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-            )} */}
+
+                    {/* Información del total */}
+                    <div className="tabla-footer">
+                        <div className="importe-total">
+                            <span className="total-label">Importe total:</span>
+                            <span className="total-valor">
+                                {formatearImporte(datosEjemplo.reduce((sum, item) => sum + item.importe, 0))}
+                            </span>
+                        </div>
+                    </div>
+                </>
+            )}
         </div>
     );
 };
 
-export default Registros;
+export default TablaMovimientos;

@@ -892,7 +892,7 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 80%;
+  width: 100%;
   /* border: 1px solid red; */
 }
 
@@ -1155,6 +1155,20 @@ textarea:focus {
 }
 
 /* MEDIA QUERIES PARA RESPONSIVE */
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .filtro-contenedor {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .fila {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
 
 /* Tablet (≥ 640px) */
 @media (min-width: 640px) {

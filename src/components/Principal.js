@@ -11,6 +11,7 @@ import Configuracion from './Locatarios/Components/ConfiguracionComponents/Confi
 import Boleto from './Boleto/Boleto';
 import ListadoPlantillas from './Locatarios/Plantillas/ListadoPlantillas';
 import Inicio from './Inicio';
+import Error404 from './Error404';
 function Principal() {
     return (
         <div className="principal">
@@ -26,6 +27,7 @@ function Principal() {
                 <Route path="/configuracion" element={<Configuracion />} />
                 <Route path="/boleto" element={<Boleto />} />
                 <Route path="/plantillas" element={<ListadoPlantillas />} />
+                <Route path="*" element={<Error404 />} />
             </Routes>
         </div>
     );

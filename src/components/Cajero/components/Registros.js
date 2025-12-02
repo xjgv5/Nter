@@ -4,13 +4,13 @@ import { faCheckCircle, faTimesCircle, faClock } from '@fortawesome/free-solid-s
 
 export const TablaMovimientos = ({ datos = [] }) => {
 
-    // Datos de ejemplo
+
     const datosEjemplo = datos.length > 0 ? datos : [
-        { id: 1, fecha: '2024-01-15', folio: 'FOL-001', importe: 1500.00, estatus: 'pagado' },
-        { id: 2, fecha: '2024-01-16', folio: 'FOL-002', importe: 2300.50, estatus: 'pendiente' },
-        { id: 3, fecha: '2024-01-17', folio: 'FOL-003', importe: 1800.00, estatus: 'cancelado' },
-        { id: 4, fecha: '2024-01-18', folio: 'FOL-004', importe: 3200.75, estatus: 'pagado' },
-        { id: 5, fecha: '2024-01-19', folio: 'FOL-005', importe: 950.00, estatus: 'pendiente' },
+        { id: 1, fecha: '2024-01-15', folio: '1741234567890', importe: 1500.00, estatus: 'pagado' },
+        { id: 2, fecha: '2024-01-16', folio: '1741234567891', importe: 2300.50, estatus: 'pendiente' },
+        { id: 3, fecha: '2024-01-17', folio: '1741234567892', importe: 1800.00, estatus: 'cancelado' },
+        { id: 4, fecha: '2024-01-18', folio: '1741234567893', importe: 3200.75, estatus: 'pagado' },
+        { id: 5, fecha: '2024-01-19', folio: '1741234567894', importe: 950.00, estatus: 'pendiente' },
     ];
 
     const formatearFecha = (fecha) => {

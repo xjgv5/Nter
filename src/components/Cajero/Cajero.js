@@ -58,7 +58,7 @@ function Cajero() {
                         className='escanear-input'
                         value={codigoTicket}
                         onChange={(e) => setCodigoTicket(e.target.value)}
-                        placeholder="Ej: TKT-12345"
+                        placeholder="Ej: 1741234567890"
                     />
                     <button
                         type="submit"

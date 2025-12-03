@@ -11,6 +11,7 @@ import Boleto from './Locatarios/Boleto/Boleto';
 import ListadoPlantillas from './Locatarios/Plantillas/ListadoPlantillas';
 import Inicio from './Inicio';
 import Error404 from './Error404';
+import BoletoDigital from './Locatarios/Boleto/BoletoDigital';
 function Principal() {
     return (
         <div className="principal">
@@ -25,6 +26,7 @@ function Principal() {
                 <Route path="/boletos-invitaciones" element={<BoletosInvitaciones />} />
                 <Route path="/boleto" element={<Boleto />} />
                 <Route path="/plantillas" element={<ListadoPlantillas />} />
+                <Route path="/boleto-digital" element={<BoletoDigital />} />
                 <Route path="*" element={<Error404 />} />
             </Routes>
         </div>

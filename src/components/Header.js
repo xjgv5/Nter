@@ -7,7 +7,7 @@ function Header({ isMenuOpen, toggleMenu }) {
     return (
         <header className='header'>
             <div className="logo">
-                <h1>Nter</h1>
+                <img src="./logoNterBlanco.png" alt="" style={{ width: '170px' }} />
             </div>
 
             <div className="header-content">

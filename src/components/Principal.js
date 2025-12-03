@@ -4,11 +4,10 @@ import Cajero from './Cajero/Cajero';
 import Corte from './Corte';
 import Dashboard from './Dashboard';
 import Logs from './Logs';
-import Locatario from './Locatarios/Locatario';
-import CrearBoleto from './CrearBoleto/CrearBoleto';
-import BoletosInvitaciones from './BoletosInvitaciones/BoletosInvitaciones';
-import Configuracion from './Locatarios/Components/ConfiguracionComponents/Configuracion';
-import Boleto from './Boleto/Boleto';
+import Locatario from './Locatarios/Locatario/Locatario';
+import CrearBoleto from './Locatarios/CrearBoleto/CrearBoleto';
+import BoletosInvitaciones from './Locatarios/BoletosInvitaciones/BoletosInvitaciones';
+import Boleto from './Locatarios/Boleto/Boleto';
 import ListadoPlantillas from './Locatarios/Plantillas/ListadoPlantillas';
 import Inicio from './Inicio';
 import Error404 from './Error404';
@@ -24,7 +23,6 @@ function Principal() {
                 <Route path="/locatario" element={<Locatario />} />
                 <Route path="/crearBoleto" element={<CrearBoleto />} />
                 <Route path="/boletos-invitaciones" element={<BoletosInvitaciones />} />
-                <Route path="/configuracion" element={<Configuracion />} />
                 <Route path="/boleto" element={<Boleto />} />
                 <Route path="/plantillas" element={<ListadoPlantillas />} />
                 <Route path="*" element={<Error404 />} />

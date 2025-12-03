@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import BotonEscanear from './components/BotonEscanear';
 import Registros from './components/Registros';
 import ModalEscanear from './components/ModalEscanear';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

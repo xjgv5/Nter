@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Plantilla from './components/Plantilla';
-import RegresarCabecera from '../../RegresarCabecera';
+import RegresarCabecera from '../RegresarCabecera';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faSync } from '@fortawesome/free-solid-svg-icons';

@@ -5,7 +5,7 @@ import { faQrcode, faFloppyDisk, faTimes } from '@fortawesome/free-solid-svg-ico
 import { useNavigate } from 'react-router-dom';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
-import { generarDatosQR, guardarPlantilla, obtenerFechaActual } from '../../Helpers/FormularioHelper'
+import { generarDatosQR, guardarPlantilla, obtenerFechaActual } from '../../../Helpers/FormularioHelper'
 
 export const Formulario = () => {
     const [nombre, setNombre] = useState('');

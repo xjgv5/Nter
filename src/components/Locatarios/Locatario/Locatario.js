@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { faTicket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Menu from './Components/Menu'
-import Resumen from './Components/Resumen'
+import Menu from './components/Menu'
+import Resumen from './components/Resumen'
 import RegresarCabecera from '../RegresarCabecera'
 function Locatario() {
     const titulo = "Locatario";

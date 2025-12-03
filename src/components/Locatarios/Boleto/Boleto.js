@@ -152,7 +152,7 @@ export const Boleto = () => {
 
                 {/* Solo mostramos el QR como antes */}
                 <div className="contenedor-qr">
-                    <img src="./qr.png" alt="Código QR" className='qr' />
+                    <img src="./qr.jpg" alt="Código QR" className='qr' />
 
                 </div>
 

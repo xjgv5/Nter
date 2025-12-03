@@ -76,7 +76,7 @@ export const BoletoDigital = ({
                         </div>
 
                         <div style={styles.qrWrapper}>
-                            <img src="./qr.png" alt="QR Code" style={styles.qrCode} />
+                            <img src="./qr.jpg" alt="QR Code" style={styles.qrCode} />
                         </div>
 
                         <div style={styles.qrInstructions}>

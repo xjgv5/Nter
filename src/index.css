@@ -1191,6 +1191,28 @@ textarea:focus {
   .texto-secundario {
     font-size: 12px;
   }
+
+  .contenedor-icono {
+    display: none;
+  }
+
+  .rol-usuario {
+    font-size: 14px;
+    margin-left: -13px;
+  }
+
+  .fila-ticket {
+    gap: 12px;
+  }
+
+  .fecha-ticket,
+  .hora-ticket {
+    font-size: 13px;
+  }
+
+  .estado-ticket {
+    font-size: 15px;
+  }
 }
 
 

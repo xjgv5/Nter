@@ -1,26 +1,21 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQrcode, faCalendar, faClock, faTicket } from '@fortawesome/free-solid-svg-icons';
-export const BoletoDigital = () => {
-    // components/TicketToShare.jsx
+import { faQrcode, faCalendar, faClock, faTicket, faUser } from '@fortawesome/free-solid-svg-icons';
 
-    const TicketToShare = ({
-        userName: "Jhon Doe",
-        eventName: "Evento de Invitación",
-        date: "2024-12-15",
-        location: "Ciudad de México",
-        ticketId: "174123456789",
-        qrValue: "https://example.com/ticket/123456"
-    })
-
+export const BoletoDigital = ({
+    nombre,
+    duracion,
+    fecha,
+    notas,
+    id = "174123456789"
+}) => {
     return (
-        <div style={styles.ticketContainer}>
+        <div style={styles.ticketContainer} id="boleto-digital">
             {/* Cabecera con logo */}
             <div style={styles.header}>
                 <div style={styles.logoSection}>
                     <div style={styles.logoPlaceholder}>
-                        {/* Reemplaza esto con tu logo */}
-                        <img src="./logoNterBlanco.png" style={styles.logo} alt="" />
+                        <img src="./logoNterBlanco.png" style={styles.logo} alt="Logo" />
                     </div>
                 </div>
                 <h2 style={styles.eventTitle}>Ticket digital</h2>
@@ -31,7 +26,7 @@ export const BoletoDigital = () => {
             <div style={styles.mainContent}>
                 <div style={styles.leftSection}>
                     <div style={styles.userInfo}>
-                        <h3 style={styles.userName}>Jhon Doe</h3>
+                        <h3 style={styles.userName}>{nombre}</h3>
                         <p style={styles.userLabel}>INVITADO</p>
                     </div>
 
@@ -40,15 +35,15 @@ export const BoletoDigital = () => {
                             <div style={styles.detailIcon}><FontAwesomeIcon icon={faCalendar} /></div>
                             <div>
                                 <p style={styles.detailTitle}>FECHA</p>
-                                <p style={styles.detailValue}>2024-12-15</p>
+                                <p style={styles.detailValue}>{fecha}</p>
                             </div>
                         </div>
 
                         <div style={styles.detailCard}>
                             <div style={styles.detailIcon}><FontAwesomeIcon icon={faClock} /></div>
                             <div>
-                                <p style={styles.detailTitle}>TIEMPO</p>
-                                <p style={styles.detailValue}>2 horas</p>
+                                <p style={styles.detailTitle}>DURACIÓN</p>
+                                <p style={styles.detailValue}>{duracion}</p>
                             </div>
                         </div>
 
@@ -56,9 +51,19 @@ export const BoletoDigital = () => {
                             <div style={styles.detailIcon}><FontAwesomeIcon icon={faTicket} /></div>
                             <div>
                                 <p style={styles.detailTitle}>ID DEL BOLETO</p>
-                                <p style={styles.detailValue}>174123456789</p>
+                                <p style={styles.detailValue}>{id}</p>
                             </div>
                         </div>
+
+                        {notas && (
+                            <div style={styles.detailCard}>
+                                <div style={styles.detailIcon}><FontAwesomeIcon icon={faUser} /></div>
+                                <div>
+                                    <p style={styles.detailTitle}>NOTAS</p>
+                                    <p style={styles.detailValue}>{notas}</p>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
 
@@ -95,15 +100,6 @@ export const BoletoDigital = () => {
                 </div>
 
                 <div style={styles.footerDivider} />
-
-                {/* <div style={styles.footerInfo}>
-                    <p style={styles.contactInfo}>
-                        📧 info@tuevento.com | 🌐 tuevento.com | 📞 +52 55 1234 5678
-                    </p>
-                    <p style={styles.copyright}>
-                        © 2024 Nombre del Evento. Todos los derechos reservados.
-                    </p>
-                </div> */}
             </div>
         </div>
     );
@@ -143,7 +139,6 @@ const styles = {
     },
     logo: {
         width: '100px',
-        // height: '100px',
     },
     eventTitle: {
         margin: '0',
@@ -303,21 +298,6 @@ const styles = {
         backgroundColor: '#e2e8f0',
         margin: '15px 0',
     },
-    footerInfo: {
-        textAlign: 'center',
-    },
-    contactInfo: {
-        fontSize: '12px',
-        color: '#4a5568',
-        margin: '0 0 8px 0',
-    },
-    copyright: {
-        fontSize: '11px',
-        color: '#a0aec0',
-        margin: '0',
-    },
 };
 
 export default BoletoDigital;
-
-

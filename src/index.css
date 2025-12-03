@@ -1158,14 +1158,38 @@ textarea:focus {
 
 /* Mobile (≤ 480px) */
 @media (max-width: 480px) {
-  .filtro-contenedor {
+  /* .filtro-contenedor {
     flex-direction: column;
+    gap: 5px;
+  } */
+
+  .fila {
+    padding: 16px 12px;
+  }
+
+  .filtros-boletos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contenedor-derecha {
     gap: 5px;
   }
 
-  .fila {
-    flex-direction: column;
-    gap: 5px;
+  .texto-boton {
+    font-size: 11px;
+  }
+
+  .elemento-menu {
+    font-size: 13px;
+  }
+
+  .texto-secundario-negro {
+    font-size: 13px;
+  }
+
+  .texto-secundario {
+    font-size: 12px;
   }
 }
 

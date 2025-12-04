@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Cajero from './Cajero/Cajero';
 import Corte from './Corte';
-import Dashboard from './Dashboard';
+import Dashboard from './Dashboard/Dashboard';
 import Logs from './Logs';
 import Locatario from './Locatarios/Locatario/Locatario';
 import CrearBoleto from './Locatarios/CrearBoleto/CrearBoleto';

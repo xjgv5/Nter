@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { faTicket } from "@fortawesome/free-solid-svg-icons";
+import { faTicket, faMoneyBills } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Menu from './components/Menu'
 import Resumen from './components/Resumen'
@@ -17,8 +17,8 @@ function Locatario() {
                     Crear Boleto
                 </Link>
                 <Link to="/crearBoleto" className='boton-primario'>
-                    <FontAwesomeIcon className='icono small' icon={faTicket} />
-                    Crear Boleto
+                    <FontAwesomeIcon className='icono small' icon={faMoneyBills} />
+                    Pagar mensualidad
                 </Link>
 
 

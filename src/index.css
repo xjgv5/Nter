@@ -211,7 +211,8 @@ body {
 .boletosInvitaciones-layout,
 .crearBoleto-layout,
 .boleto-layout,
-.plantillas-layout {
+.plantillas-layout,
+.dashboard-layout {
   width: 100%;
   min-height: calc(100vh - 80px);
   padding: 20px;
@@ -2108,261 +2109,37 @@ textarea:focus {
   margin-right: auto;
 }
 
-/* PSYDUCK PRIMERA GENERACIÓN */
-.psyduck-animation {
+/* --------------------- */
+.contenedorGrafica {
+  width: 80%;
+  height: 600px;
+  border: 1px solid red;
+  margin: 0 auto;
+}
+
+.contenedor-chart {
+  border: 1px solid blue;
   position: relative;
-  width: 200px;
-  height: 220px;
-  margin: 1.5rem auto;
-}
-
-/* Contenedor principal de Psyduck */
-.psyduck-v1 {
-  position: absolute;
-  width: 160px;
-  height: 180px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: psyduckBob 4s ease-in-out infinite;
-}
-
-/* CUERPO DE PSYDUCK - Estilo GameBoy */
-.psy-body {
-  position: absolute;
-  width: 120px;
-  height: 100px;
-  background: #FFD700;
-  border-radius: 45% 45% 40% 40%;
-  top: 50px;
-  left: 20px;
-  border: 2px solid #B8860B;
-  box-shadow:
-    inset 0 -15px 20px rgba(184, 134, 11, 0.2),
-    0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Vientre más claro */
-.psy-belly {
-  position: absolute;
-  width: 80px;
-  height: 60px;
-  background: #FFEC8B;
-  border-radius: 40% 40% 50% 50%;
-  top: 20px;
-  left: 20px;
-  border: 1px solid #DAA520;
-}
-
-/* CABEZA */
-.psy-head {
-  position: absolute;
-  width: 100px;
-  height: 80px;
-  background: #FFD700;
-  border-radius: 50% 50% 40% 40%;
-  top: 20px;
-  left: 30px;
-  border: 2px solid #B8860B;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  animation: headTilt 5s ease-in-out infinite;
-}
-
-/* PICO INFERIOR */
-.psy-bill {
-  position: absolute;
-  width: 60px;
-  height: 25px;
-  background: #FF8C00;
-  border-radius: 0 0 50% 50%;
-  bottom: -10px;
-  left: 20px;
-  border: 1px solid #B8860B;
-}
-
-/* OJOS - Estilo pixelado */
-.psy-eyes {
-  position: absolute;
-  top: 25px;
-  left: 20px;
-  display: flex;
-  gap: 40px;
-}
-
-.psy-eye {
-  width: 20px;
-  height: 30px;
-  background: #000;
-  border-radius: 50%;
-  position: relative;
-  border: 2px solid #333;
-  animation: blink 8s infinite;
-}
-
-.psy-eye::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  top: 8px;
-  left: 6px;
-}
-
-/* BOCA */
-.psy-mouth {
-  position: absolute;
-  width: 40px;
-  height: 15px;
-  background: #8B0000;
-  border-radius: 0 0 50% 50%;
-  bottom: 15px;
-  left: 30px;
-  border: 1px solid #660000;
-}
-
-/* PICO SUPERIOR */
-.psy-beak {
-  position: absolute;
-  width: 30px;
-  height: 15px;
-  background: #FF8C00;
-  border-radius: 50% 50% 0 0;
-  top: 70px;
-  left: 65px;
-  border: 1px solid #B8860B;
-  z-index: 2;
-}
-
-/* BRAZOS */
-.psy-arms {
-  position: absolute;
-  top: 90px;
-  left: 10px;
-  display: flex;
-  gap: 90px;
-}
-
-.psy-arm {
-  width: 20px;
-  height: 40px;
-  background: #FFD700;
-  border-radius: 50%;
-  border: 1px solid #B8860B;
-  animation: armWave 3s ease-in-out infinite;
-}
-
-.right-arm {
-  animation-delay: 1.5s;
-}
-
-/* PATAS */
-.psy-legs {
-  position: absolute;
-  bottom: 30px;
-  left: 40px;
-  display: flex;
-  gap: 60px;
-}
-
-.psy-leg {
-  width: 25px;
-  height: 30px;
-  background: #FFD700;
-  border-radius: 40% 40% 0 0;
-  border: 1px solid #B8860B;
-  animation: legTap 2s ease-in-out infinite;
-}
-
-.right-leg {
-  animation-delay: 1s;
-}
-
-/* COLA */
-.psy-tail {
-  position: absolute;
-  width: 30px;
-  height: 40px;
-  background: #FFD700;
-  border-radius: 50%;
-  top: 100px;
-  right: 10px;
-  border: 1px solid #B8860B;
-  transform: rotate(30deg);
-  animation: tailWag 2s ease-in-out infinite;
-}
-
-/* MANCHAS EN LA FRENTE (icono de Psyduck) */
-.psy-spots {
-  position: absolute;
-  top: 15px;
-  left: 40px;
-}
-
-.spot {
-  position: absolute;
-  background: #000;
-  border-radius: 50%;
-  border: 1px solid #333;
-}
-
-.spot-1 {
-  width: 10px;
-  height: 10px;
-  top: 0;
-  left: 0;
-}
-
-.spot-2 {
-  width: 10px;
-  height: 10px;
-  top: 0;
-  left: 15px;
-}
-
-.spot-3 {
-  width: 10px;
-  height: 10px;
-  top: 0;
-  left: 30px;
-}
-
-/* EFECTOS DE CONFUSIÓN */
-.confusion-effects {
-  position: absolute;
-  top: -20px;
-  left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 }
 
-.dizzy {
+.navegacion-dias {
+  border: 1px solid green;
+  right: 0;
+  display: flex;
+  height: 40px;
+  gap: 10px;
+  width: 200px;
+  /* right: 0; */
+  position: relative;
+  z-index: 5;
+}
+
+.contenedor-calendario {
+  border: 1px solid orange;
   position: absolute;
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--primary-blue-color);
-  animation: dizzyFloat 3s infinite linear;
-  opacity: 0;
-}
-
-.dizzy-1 {
-  top: 10%;
-  left: 20%;
-  animation-delay: 0s;
-}
-
-.dizzy-2 {
-  top: 30%;
-  right: 15%;
-  animation-delay: 1s;
-}
-
-.dizzy-3 {
-  bottom: 20%;
-  left: 25%;
-  animation-delay: 2s;
+  z-index: 6;
 }
 
 /* LÍNEAS DE CONFUSIÓN */
@@ -2528,7 +2305,7 @@ textarea:focus {
 
 
 
-/* v2 */
+/* v2----------------------------- */
 .canvas {
   background: transparent;
   height: 50vmin;

@@ -2109,39 +2109,213 @@ textarea:focus {
   margin-right: auto;
 }
 
-/* --------------------- */
-.contenedorGrafica {
-  width: 80%;
-  height: 600px;
-  border: 1px solid red;
-  margin: 0 auto;
-}
-
-.contenedor-chart {
-  border: 1px solid blue;
+/* Inicio de dashboard (grafica) */
+.contenedor-grafica {
   position: relative;
   width: 100%;
   height: 100%;
+  min-height: 500px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.navegacion-dias {
-  border: 1px solid green;
-  right: 0;
+/* Encabezado con botones en esquina superior derecha */
+.encabezado-grafica {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: flex;
-  height: 40px;
   gap: 10px;
-  width: 200px;
-  /* right: 0; */
+  z-index: 10;
+}
+
+/* Botones principales */
+.boton-primario {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+}
+
+.boton-primario:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+}
+
+.boton-secundario {
+  background: #64748b;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.boton-secundario:hover {
+  background: #475569;
+  transform: translateY(-1px);
+}
+
+/* Calendario superpuesto */
+.contenedor-calendario {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  z-index: 100;
+  animation: aparecer 0.3s ease-out;
+}
+
+.calendario-estilizado {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  width: 100%;
+}
+
+.calendario-estilizado .react-calendar__navigation button {
+  color: #1e293b;
+  min-width: 44px;
+  background: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.calendario-estilizado .react-calendar__tile--active {
+  background: #3b82f6 !important;
+  color: white !important;
+  border-radius: 6px;
+}
+
+.calendario-estilizado .react-calendar__tile--now {
+  background: #f1f5f9 !important;
+  color: #0f172a !important;
+  border: 2px solid #3b82f6;
+  border-radius: 6px;
+}
+
+/* Navegación de días - ahora en esquina superior derecha */
+.navegacion-dias {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+}
+
+/* Contenedor de la gráfica */
+.contenedor-chart {
   position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  margin-top: 0;
+  padding-top: 60px;
+}
+
+/* Información de fecha */
+.info-fecha {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  color: #64748b;
   z-index: 5;
 }
 
-.contenedor-calendario {
-  border: 1px solid orange;
-  position: absolute;
-  z-index: 6;
+.fecha-seleccionada {
+  font-weight: 600;
+  color: #1e293b;
 }
 
+/* Animaciones */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botón de cerrar en calendario */
+.boton-cerrar-calendario {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 101;
+  transition: all 0.2s ease;
+}
+
+.boton-cerrar-calendario:hover {
+  background: #dc2626;
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .encabezado-grafica {
+    position: relative;
+    top: 0;
+    right: 0;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+
+  .navegacion-dias {
+    position: relative;
+    top: 0;
+    right: 0;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+
+  .contenedor-chart {
+    padding-top: 10px;
+  }
+}
+
+/* Fin de dashboard (Grafica) */
 /* LÍNEAS DE CONFUSIÓN */
 .confusion-lines {
   position: absolute;
